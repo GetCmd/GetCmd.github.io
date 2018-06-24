@@ -2,8 +2,8 @@
     window.onload = function () {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "http://jsonip.appspot.com/?callback=DisplayIP";
-        document.innerHTML().appendChild(script);
+        script.src = "http://httpbin.org/ip";
+        alert(document.innerHTML())
     };
     function DisplayIP(response) {
         alert( response.ip);

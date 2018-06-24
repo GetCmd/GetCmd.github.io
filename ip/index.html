@@ -3,7 +3,21 @@
 </script>
 <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
 
-  <script type="text/javascript" src="http://1abzar.ir/abzar/tools/time-date/date-fa.php?var=datea"></script>
 <script type="text/javascript">
-  document.write(userip); document.write(datea);
+  document.write(userip); 
+</script>
+<link rel="stylesheet" href="jalalijscalendar/skins/aqua/theme.css">
+<script src="jalalijscalendar/jalali.js"></script>
+<script src="jalalijscalendar/calendar.js"></script>
+<script src="jalalijscalendar/calendar-setup.js"></script>
+<script src="jalalijscalendar/lang/calendar-fa.js"></script>
+
+<input id="date_input" type="text"><input id="date_btn" type="button">
+<script>
+Calendar.setup({
+    inputField: 'date_input',
+    button: 'date_btn',
+    ifFormat: '%Y/%m/%d',
+    dateType: 'jalali'
+});
 </script>

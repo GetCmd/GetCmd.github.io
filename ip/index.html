@@ -1,29 +1,12 @@
-<div ng-controller="geoCtrl">
-  <p ng-bind="ip"></p>
-  <p ng-bind="hostname"></p>
-  <p ng-bind="loc"></p>
-  <p ng-bind="org"></p>
-  <p ng-bind="city"></p>
-  <p ng-bind="region"></p>
-  <p ng-bind="country"></p>
-  <p ng-bind="phone"></p>
-</div>
-
 <script type="text/javascript">
-'use strict';
-var geo = angular.module('geo', [])
-.controller('geoCtrl', ['$scope', '$http', function($scope, $http) {
-  $http.jsonp('http://ipinfo.io/?callback=JSON_CALLBACK')
-    .success(function(data) {
-    $scope.ip = data.ip;
-    $scope.hostname = data.hostname;
-    $scope.loc = data.loc; //Latitude and Longitude
-    $scope.org = data.org; //organization
-    $scope.city = data.city;
-    $scope.region = data.region; //state
-    $scope.country = data.country;
-    $scope.phone = data.phone; //city area code
-  });
-}]);
-  alert(data);
+    window.onload = function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "http://jsonip.appspot.com/?callback=DisplayIP";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    };
+    function DisplayIP(response) {
+        document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
+    }
+</script>
 </script>

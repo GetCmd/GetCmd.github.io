@@ -1,12 +1,11 @@
 
 <script type="text/javascript">
-var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-xhr.open('get', 'http://httpbin.org/ip', true);
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) { 
-       alert( document.innerHTML);
-         alert(xhr.responseText);
-    } 
-}
-xhr.send();
+getJSON('http://httpbin.org/ip&callback',
+function(err, data) {
+  if (err !== null) {
+    alert('Something went wrong: ' + err);
+  } else {
+    alert('Your query count: ' + data.query.count);
+  }
+});
 </script>

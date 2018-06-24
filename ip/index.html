@@ -1,12 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ 
+<script type="text/javascript" src="jquery.js"></script>
+ 
 <script type="text/javascript">
-    window.onload = function () {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "http://httpbin.org/?callback=DisplayIP";
-      //  document.getElementsByTagName("head")[0].appendChild(script);
-    };
-    function DisplayIP(response) {
-        alert("Your IP Address is " + response.innerHTML);
-    }
+   function getDivContent(){
+ 
+      $('#testDiv').load('https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML');
+var b=document.getElementById('Syntax').options[document.getElementById('Syntax').selectedIndex].value;
+       alert(b);
+document.getElementById("a").innerHTML=b;
+   }
 </script>
-</script>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+<select id="test" name="test" onchange="getDivContent()">
+   <option value="blank">blank</option>
+   <option value="opt2">opt2</option>
+   <option value="opt3">opt3</option>
+   <option value="opt4">opt4</option>
+</select>
+<div id="testDiv"> </div>
+</body>
+</html>

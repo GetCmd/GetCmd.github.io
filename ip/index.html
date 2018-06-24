@@ -8,10 +8,8 @@
   <p ng-bind="country"></p>
   <p ng-bind="phone"></p>
 </div>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.angularjs.org/1.2.12/angular.min.js"></script>
-<script src="http://code.angularjs.org/1.2.12/angular-route.min.js"></script>
-<script>
+
+<script type="text/javascript">
 'use strict';
 var geo = angular.module('geo', [])
 .controller('geoCtrl', ['$scope', '$http', function($scope, $http) {
